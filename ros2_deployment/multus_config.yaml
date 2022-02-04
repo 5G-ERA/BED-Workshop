@@ -1,0 +1,24 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: ros-network
+spec:
+  config: '{
+    "cniVersion": "0.3.0",
+    "name": "dds-network",
+    "type": "macvlan",
+    "master": "enp0s3",
+    "mode": "bridge",
+    "isDefaultgateway": true,
+    "ipam": {
+      "type": "host-local",
+      "ranges": [
+         [ {
+           "subnet": "10.0.2.0/24",
+           "rangeStart": "10.0.2.1",
+           "rangeEnd": "10.0.2.254",
+           "gateway": "10.0.2.255"
+         } ]
+      ]
+    }
+  }

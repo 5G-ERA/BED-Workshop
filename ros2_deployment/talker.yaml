@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ros-talker-deployment
+  labels:
+    app: ros-talker
+  annotations:
+    k8s.v1.cni.cncf.io/networks: ros-network
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ros-talker
+  template:
+    metadata:
+      labels:
+        app: ros-talker
+      annotations:
+        k8s.v1.cni.cncf.io/networks: ros-network
+    spec:
+      containers:
+      - name: talker 
+        image: public.ecr.aws/c8q3f0b5/ros-performance-test:latest
+        command: ["/bin/bash", "-c"]
+        args: ["source /opt/ros/foxy/setup.bash && ros2 run demo_nodes_cpp talker --ros-args "]
+        imagePullPolicy: IfNotPresent
+        resources: {}
+          
+
