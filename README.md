@@ -116,15 +116,15 @@ $ tar xvvf osm-packages-master.tar.gz
 $ cd osm-packages-master
 ```
 
-Copy the password and login to the openstack panel available at `192.168.56.4`. The username is admin.
+Copy the password and login to the OpenStack panel available at `192.168.56.4`. The username is admin.
 
-After the successful login, navigate to `Network > Network Topology > Topology` tab and edit the virtual network located on the right hand side.
+After the successful login, navigate to the `Network > Network Topology > Topology` tab and edit the virtual network located on the right-hand side.
 
-Click the network on the topology diagram and then click `Edit Network` button. Change the name to `mgmt-net`.
+Click the network on the topology diagram and then click the `Edit Network` button. Change the name to `mgmt-net`.
 
 ### Add K8s cluster
 
-Next switch to the Edge machine and export the kubernetes configuration.
+Next switch to the Edge machine and export the Kubernetes configuration.
 
 ```shell
 $ microk8s.config > kubeconfig.yaml
@@ -138,7 +138,7 @@ $ osm k8scluster-add --creds kubeconfig.yaml \
                      --k8s-nets '{"k8s_net1": "mgmt-net"}' \
                      --description "K8s cluster" my-k8s-cluster
 ```
-When the kubernetes cluster is added, proceed to add example Virtual network Functions and Network services. OpenLDAP will be used as an example. 
+When the Kubernetes cluster is added, proceed to add example Virtual network Functions and Network services. OpenLDAP will be used as an example. 
 Navigate to the downloaded git repository. Locate the `openldap_knf` and `openldap_ns` folders.
 
 Starting with the first one, edit the `openldap_vnfd.yaml` file to the following contents:
@@ -163,9 +163,9 @@ vnfd:
   provider: Telefonica
   version: '1.0'
 ```
-Keep in mind to maintain the `k8s-cluster-net` property in pai with the name of the network specified while creating the cluster.
+Keep in mind to maintain the `k8s-cluster-net` property in pair with the name of the network specified while creating the cluster.
 
-Exit the folder and enter `openldap_ns` folder.
+Exit the folder and enter the `openldap_ns` folder.
 
 Edit the `openldap_nsd.yaml` file to the following contents.
 
@@ -202,12 +202,13 @@ $ osm nfpkg-create openldap_knf
 
 $ osm nspkg-create openldap_ns
 ```
-Create new Network Service instance with the following command 
+Create a new Network Service instance with the following command 
 
 ```shell
 $ osm ns-create --ns_name ldap --nsd_name openldap_ns \
                 --vim_account openstack-site 
 ```
 After logging into the OSM account, and navigating to the `Instances > NS Instances` the new Network Service should be visible during the deployment process or already deployed.
+
 
 ## Stage 5 - Middleware considerations
