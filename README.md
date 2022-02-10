@@ -120,6 +120,11 @@ To clone the example packages to be deployed in the OSM use the following comman
 
 ```shell
 $ git clone https://osm.etsi.org/gitlab/vnf-onboarding/osm-packages.git
+
+# unzip the package 
+
+$ tar xvvf osm-packages-master.tar.gz
+
 ```
 The example packages will be used to deploy the KNF.
 
@@ -134,11 +139,7 @@ Retrieve the Openstack password using the command
 ```shell
 $ sudo snap get microstack config.credentials.keystone-password
 
-# unzip the package 
 
-$ tar xvvf osm-packages-master.tar.gz
-
-$ cd osm-packages-master
 ```
 
 Copy the password and login to the OpenStack panel available at `192.168.56.4`. The username is admin.
