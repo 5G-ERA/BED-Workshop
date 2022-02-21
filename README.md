@@ -148,7 +148,17 @@ sudo microk8s.kubectl get all
 sudo microk8s.kubectl exec --stdin --tty containerID --/bin/bash
 ```
 
+Inside the container, source ROS2 opt default installation and source the ROS2 workspace created via the yaml file.
 
+ROS2 foxy installation
+```
+source /opt/ros/foxy/setup.bash
+```
+Workspace
+```
+source ~/dev_ws/install/setup.bash
+```
+Launch the up with virtual screen.
 ```
 xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
 ```
