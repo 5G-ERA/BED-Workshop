@@ -203,8 +203,7 @@ For more information about how to run the same example in docker, visit: https:/
 
 ### Measure performance of your ROS2 systems and topologies:
 
-For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: 
-> Array1k,Array4k,Array16k,Array32k,Array60k,Array64k,Array256k,Array1m,Array2m,Array4m,Array8m,BoundedSequence1k,BoundedSequence4k,BoundedSequence16k,BoundedSequence32k,BoundedSequence64k,BoundedSequence256k,BoundedSequence1m,BoundedSequence2m,BoundedSequence4m,BoundedSequence8m,UnboundedSequence,UnboundedString,Struct16,Struct256,Struct4k,Struct32k,PontCloud1m,,PointCloud2m,PointCloud4m,PointCloud8m,PointCloud512k,NavSatFix,RadarDetection,RadarTrack,Range.
+For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: Array1k, PointCloud512k, RadarTrack...
 
 Additionally, the ROS2_np_latency will be used to test various ROS2 topologies and the latency.
 
@@ -240,6 +239,10 @@ https://drive.google.com/file/d/15nX80RK6aS8abZvQAOnMNUEgh7px9V5S/view
 ApexIA is available for a variety of ROS2 distributions.
 https://gitlab.com/ApexAI/performance_test
 
+To get the list of all available datatypes to run performance test, use:
+```
+/opt/performance_test/lib/performance_test/perf_test -c  FastRTPS –msg-list
+```
 ## Stage 4 - OSM deployment
 
 
