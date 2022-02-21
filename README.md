@@ -142,6 +142,8 @@ sudo microk8s.kubectl apply -f talker_listener_bk_running.yaml
 sudo microk8s.kubectl get all
 ```
 
+5) Exec into the pod and launch the turtlebot 3 experiment.
+
 ## Stage 4 - OSM deployment
 
 
