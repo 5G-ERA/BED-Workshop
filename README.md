@@ -163,7 +163,12 @@ Launch the up with virtual screen.
 xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
 ```
 
-6) Visualice the simulation in the web browser.
+6) Visualice the simulation in the web browser. Webots will use port 1234 for the streaming. It has already been mapped in the deployed yaml file with a k8 service.
+
+```
+http://containerIP:1234/index.html
+```
+
 
 ## Stage 4 - OSM deployment
 
