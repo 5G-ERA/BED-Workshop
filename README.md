@@ -183,6 +183,9 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 Visualice the robot in the web simulation moving according to the cmd_vel commands published by the teleop node.
 
+![imagen](https://user-images.githubusercontent.com/26432703/154964739-07195e9e-5042-482c-aa4c-44f3a7a406d1.png)
+
+
 You can clean your enviroment after finishing the experiment by removing the k8 pods:
 ```
 sudo microk8s.kubectl delete deployment weboot2
