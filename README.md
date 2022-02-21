@@ -203,11 +203,34 @@ sudo microk8s.kubectl get all
 For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: 
 > Array1k,Array4k,Array16k,Array32k,Array60k,Array64k,Array256k,Array1m,Array2m,Array4m,Array8m,BoundedSequence1k,BoundedSequence4k,BoundedSequence16k,BoundedSequence32k,BoundedSequence64k,BoundedSequence256k,BoundedSequence1m,BoundedSequence2m,BoundedSequence4m,BoundedSequence8m,UnboundedSequence,UnboundedString,Struct16,Struct256,Struct4k,Struct32k,PontCloud1m,,PointCloud2m,PointCloud4m,PointCloud8m,PointCloud512k,NavSatFix,RadarDetection,RadarTrack,Range.
 
+Additionally, the ROS2_np_latency will be used to test various ROS2 topologies and the latency.
+
 For this experiment, the Performance_Test.yaml will be used. 
 
-1) Launch
+1) Launch the yaml recipy. This will create two pods connected with a ROS2 network of type Vlan.
 
+```
+sudo microk8s.kubectl apply -f Performance_Test.yaml
+```
 
+2) Exec into either one of the pods.
+
+```
+sudo microk8s.kubectl exec --stdin --tty containerID --/bin/bash
+```
+
+Both containers have the ApexIA tools and the ROS2_np_latency. Let's run a ApexIA test. The ApexIA executable is in the path: 
+
+```
+/opt/performance_test/lib/performance_test/perf_test 
+```
+The test to run will use DDS fastRTPS, output the results to a csv file and send a message of type Array1k.
+
+```
+/opt/performance_test/lib/performance_test/perf_test -c  FastRTPS --msg Array1k --output csv
+```
+
+Stop with control+c when you want to stop the test, there is no limit time.
 
 ## Stage 4 - OSM deployment
 
