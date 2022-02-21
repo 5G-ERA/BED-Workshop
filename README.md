@@ -168,7 +168,21 @@ xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
 ```
 http://containerIP:1234/index.html
 ```
+7) Control the robot with teleop ROS2 package.
 
+Inside the k8's pod, launch this command to install the teleop package.
+
+```
+sudo apt-get install ros-foxy-teleop-twist-keyboard
+```
+
+8) Launch the teleop node:
+
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+Visualice the robot in the web simulation moving according to the cmd_vel commands published by the teleop node.
 
 ## Stage 4 - OSM deployment
 
