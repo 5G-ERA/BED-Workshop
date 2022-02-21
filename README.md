@@ -136,6 +136,11 @@ The file for the digital twin yaml is named: talker_listener_bk_running.yaml
 sudo microk8s.kubectl apply -f talker_listener_bk_running.yaml
 ```
 
+4) Review the status of the deployment: 
+
+```
+sudo microk8s.kubectl get all
+```
 
 ## Stage 4 - OSM deployment
 
