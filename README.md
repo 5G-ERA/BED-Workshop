@@ -205,11 +205,11 @@ For more information about how to run the same example in docker, visit: https:/
 
 ### Measure performance of your ROS2 systems and topologies:
 
-For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: Array1k, PointCloud512k, RadarTrack...
+For this purpose, two tools will be used. ApexAI performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexAI allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: Array1k, PointCloud512k, RadarTrack...
 
 Additionally, the ROS2_np_latency will be used to test various ROS2 topologies and the latency.
 
-#### ApexIA performance test: 
+#### ApexAI performance test: 
 For this experiment, the Performance_Test.yaml will be used. 
 
 1) Launch the yaml recipy. This will create two pods connected with a ROS2 network of type Vlan.
@@ -224,7 +224,7 @@ sudo microk8s.kubectl apply -f Performance_Test.yaml
 sudo microk8s.kubectl exec --stdin --tty containerID --/bin/bash
 ```
 
-Both containers have the ApexIA tools and the ROS2_np_latency. Let's run a ApexIA test. The ApexIA executable is in the path: 
+Both containers have the ApexAI tools and the ROS2_np_latency. Let's run a ApexAI test. The ApexAI executable is in the path: 
 
 ```
 /opt/performance_test/lib/performance_test/perf_test 
@@ -237,9 +237,9 @@ The test to run will use DDS fastRTPS, output the results to a csv file and send
 
 Stop with control+c when you want to stop the test, there is no limit time. An example of the output is available in this repo with the name: Performance_APEXIA_EXAMPLE_OUTPUT.csv
 
-For an extended documentation of apexIA tools:
+For an extended documentation of ApexAI tools:
 https://drive.google.com/file/d/15nX80RK6aS8abZvQAOnMNUEgh7px9V5S/view
-ApexIA is available for a variety of ROS2 distributions.
+ApexAI is available for a variety of ROS2 distributions.
 https://gitlab.com/ApexAI/performance_test
 
 To get the list of all available datatypes to run performance test, use:
