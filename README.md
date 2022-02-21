@@ -184,6 +184,30 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 Visualice the robot in the web simulation moving according to the cmd_vel commands published by the teleop node.
 
+### Measure performance of your ROS2 systems and topologies:
+
+For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. 
+
+<!DOCTYPE html>
+<html>
+
+   <body>
+      <h1></h1>
+      <table>
+         <tr>
+            <th>DDS</th>
+            <th>PHYSICAL_RAM</th>
+            <th>VIRTUAL_RAM</th>
+         </tr>
+         <tr>
+            <td>FASTRTPS</td>
+            <td>20MB - RSS</td>
+            <td>568MB - VSZ</td>
+         </tr>
+      </table>
+   </body>
+</html>
+
 ## Stage 4 - OSM deployment
 
 
