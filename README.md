@@ -144,6 +144,15 @@ sudo microk8s.kubectl get all
 
 5) Exec into the pod and launch the turtlebot 3 experiment.
 
+```
+sudo microk8s.kubectl exec --stdin --tty containerID --/bin/bash
+```
+
+
+```
+xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
+```
+
 6) Visualice the simulation in the web browser.
 
 ## Stage 4 - OSM deployment
