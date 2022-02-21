@@ -198,6 +198,9 @@ Double check by listing all pods running:
 sudo microk8s.kubectl get all
 ```
 
+This experiment uses Webots ROS2 interface developed by: https://github.com/cyberbotics/webots_ros2
+For more information about how to run the same example in docker, visit: https://cyberbotics.com/doc/guide/using-ros
+
 ### Measure performance of your ROS2 systems and topologies:
 
 For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: 
