@@ -232,6 +232,11 @@ The test to run will use DDS fastRTPS, output the results to a csv file and send
 
 Stop with control+c when you want to stop the test, there is no limit time. An example of the output is available in this repo with the name: Performance_APEXIA_EXAMPLE_OUTPUT.csv
 
+For an extended documentation of apexIA tools:
+https://drive.google.com/file/d/15nX80RK6aS8abZvQAOnMNUEgh7px9V5S/view
+ApexIA is available for a variety of ROS2 distributions.
+https://gitlab.com/ApexAI/performance_test
+
 ## Stage 4 - OSM deployment
 
 
