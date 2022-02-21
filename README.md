@@ -117,11 +117,12 @@ In this experiment, it will be demostrated how to create a k8 pod with an integr
 
 1) Setup – Installation of MicroK8s with configured Multus.
 
+```
 -sudo snap install microk8s --classic
 -sudo usermod -a -G microk8s $USER
 -sudo chown -f -R $USER ~/.kube
 -sudo microk8s enable dns multus
-
+```
 
 ## Stage 4 - OSM deployment
 
