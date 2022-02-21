@@ -246,7 +246,22 @@ To get the list of all available datatypes to run performance test, use:
 ```
 #### ROS2_mp_Latency:
 
+The interesting idea behing ros2_mp_lantecy is that it allows to test many topologies of your ROS2 system by creating and deploying fully c++ written ROS2 nodes. In this way, the simmilarity to the real scenario is closer. This package uses 3 types of nodes: sources, work and sink. 1) Sources will publish the data at a given rate and with specific datatype. Work node's represent any ros2 node that works with the data (object recognition for example) and sinks are the nodes that study the latency of the data within all the jumps. You can have as many jumps and topologies as desired. For more information, visit offical tool git: https://github.com/neil-rti/ros2_mp_latency 
+
 ![image](https://user-images.githubusercontent.com/26432703/154928105-33b5bfc4-dc55-4070-b3fe-c928318222df.png)
+
+For this experiment, we will launch in one pod a source node and in another pod a sink node. We will exec into the container and run the source and sink nodes.
+In the talker pod, run:
+```
+ros2 run mp_latency ipcsource_1kb &
+```
+In the listener pod, run:
+```
+ros2 run mp_latency ipcsink_1kb &
+```
+
+The output will provide a histogram, a log and a stadistics file. For a detailed explanation of the results, visit: 
+https://www.rti.com/blog/latest-connext-dds-ros-2-performance-benchmarks
 
 ## Stage 4 - OSM deployment
 
