@@ -187,42 +187,7 @@ Visualice the robot in the web simulation moving according to the cmd_vel comman
 ### Measure performance of your ROS2 systems and topologies:
 
 For this purpose, two tools will be used. ApexIA performance is the most commmon package to use for testing your system and evaluate a variety of different metrics. ApexIA allows to configure different DDS technologies, QoS, and datatypes. Some exaple of datatypes allows: 
-Array1k
-Array4k
-Array16k
-Array32k
-Array60k
-Array64k
-Array256k
-Array1m
-Array2m
-Array4m
-Array8m
-BoundedSequence1k
-BoundedSequence4k
-BoundedSequence16k
-BoundedSequence32k
-BoundedSequence64k
-BoundedSequence256k
-BoundedSequence1m
-BoundedSequence2m
-BoundedSequence4m
-BoundedSequence8m
-UnboundedSequence
-UnboundedString
-Struct16
-Struct256
-Struct4k
-Struct32k
-PointCloud1m
-PointCloud2m
-PointCloud4m
-PointCloud8m
-PointCloud512k
-NavSatFix
-RadarDetection
-RadarTrack
-Range
+> Array1k,Array4k,Array16k,Array32k,Array60k,Array64k,Array256k,Array1m,Array2m,Array4m,Array8m,BoundedSequence1k,BoundedSequence4k,BoundedSequence16k,BoundedSequence32k,BoundedSequence64k,BoundedSequence256k,BoundedSequence1m,BoundedSequence2m,BoundedSequence4m,BoundedSequence8m,UnboundedSequence,UnboundedString,Struct16,Struct256,Struct4k,Struct32k,PontCloud1m,,PointCloud2m,PointCloud4m,PointCloud8m,PointCloud512k,NavSatFix,RadarDetection,RadarTrack,Range.
 
 
 
