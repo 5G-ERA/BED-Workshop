@@ -243,6 +243,10 @@ To get the list of all available datatypes to run performance test, use:
 ```
 /opt/performance_test/lib/performance_test/perf_test -c  FastRTPS –msg-list
 ```
+
+
+![image](https://user-images.githubusercontent.com/26432703/154928105-33b5bfc4-dc55-4070-b3fe-c928318222df.png)
+
 ## Stage 4 - OSM deployment
 
 
