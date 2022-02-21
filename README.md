@@ -113,7 +113,7 @@ $ kubectl apply -f talker.yaml
 ## Stage 3 - Performance image functionality
 
 ### Digital Twin with k8, Webots & ROS2 Web simulation:
-
+In this experiment, it will be demostrated how to create a k8 pod with an integrated simulation streaming at port 1234 and visualice the world and robot using web browser. This approach will enable scalable and containered simulations integrated with ROS2 systems and with online web visualization.
 
 ## Stage 4 - OSM deployment
 
