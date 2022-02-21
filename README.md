@@ -123,6 +123,8 @@ In this experiment, it will be demostrated how to create a k8 pod with an integr
 -sudo chown -f -R $USER ~/.kube
 -sudo microk8s enable dns multus
 ```
+2) Download yaml k8 recipy for digital twin.
+
 
 ## Stage 4 - OSM deployment
 
