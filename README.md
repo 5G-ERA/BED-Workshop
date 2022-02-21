@@ -195,14 +195,13 @@ For this purpose, two tools will be used. ApexIA performance is the most commmon
       <h1></h1>
       <table>
          <tr>
-            <th>DDS</th>
-            <th>PHYSICAL_RAM</th>
-            <th>VIRTUAL_RAM</th>
+            <th>Datatypes</th>
+
          </tr>
          <tr>
-            <td>FASTRTPS</td>
-            <td>20MB - RSS</td>
-            <td>568MB - VSZ</td>
+            <td>Array1k</td>
+            <td>Array4k</td>
+            <td>Array16k</td>
          </tr>
       </table>
    </body>
