@@ -144,6 +144,8 @@ sudo microk8s.kubectl get all
 
 5) Exec into the pod and launch the turtlebot 3 experiment.
 
+6) Visualice the simulation in the web browser.
+
 ## Stage 4 - OSM deployment
 
 
