@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weboot2
+  labels:
+    app: ros-listener
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ros-listener
+  template:
+    metadata:
+      labels:
+        app: ros-listener
+    spec:
+      containers:
+      - name: listener
+        image: cyberbotics/webots:latest
+        command: [ "/bin/bash", "-c" ]
+        args: [ 'mkdir -p ~/dev_ws/src && apt update && apt install -y curl && apt install gnupg2 -y && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" |  tee /etc/apt/sources.list.d/ros2.list > /dev/null && apt update && apt install ros-foxy-ros-base -y && source /opt/ros/foxy/setup.bash && cd ~/dev_ws/ && apt install git -y && git clone --recurse-submodules https://github.com/adrianLIrobotics/webots_ros2.git src/webots_ros2 && apt install build-essential -y && apt install cmake -y && apt install libbullet-dev -y && apt install python3-colcon-common-extensions -y && apt install python3-rosdep -y && rosdep init && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -y && source /opt/ros/foxy/setup.bash && colcon build  && source /opt/ros/foxy/setup.bash && source ~/dev_ws/install/setup.bash  && while true; do sleep 30; done;']
+        imagePullPolicy: IfNotPresent
+        
+---
+
+apiVersion: v1
+kind: Service
+type:
+metadata:
+  labels:
+    name: ros-listener
+  name: ros-listener
+spec:
+  ports:
+  - name: weboot2
+    port: 1234
+    targetPort: 1234
+  selector:
+    app: ros-listener

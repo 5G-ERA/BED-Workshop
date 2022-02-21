@@ -1,0 +1,82 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: dds-network
+spec:
+  config: '{
+    "cniVersion": "0.3.0",
+    "name": "dds-network",
+    "type": "macvlan",
+    "master": "wlo1",
+    "mode": "bridge",
+    "isDefaultgateway": true,
+    "ipam": {
+      "type": "host-local",
+      "ranges": [
+         [ {
+           "subnet": "192.168.1.0/24",
+           "rangeStart": "192.168.1.160",
+           "rangeEnd": "192.168.1.180",
+           "gateway": "192.168.1.1"
+         } ]
+      ]
+    }
+  }'
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ros-listener-deployment
+  labels:
+    app: ros-listener
+  annotations:
+    k8s.v1.cni.cncf.io/networks: dds-network
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ros-listener
+  template:
+    metadata:
+      labels:
+        app: ros-listener
+      annotations:
+        k8s.v1.cni.cncf.io/networks: dds-network
+    spec:
+      containers:
+      - name: listener
+        image: public.ecr.aws/c8q3f0b5/ros-performance-test:latest 
+        command: ["/bin/bash", "-c"]
+        args: ["source /opt/ros/foxy/setup.bash && mkdir -p ~/dev_ws/src && apt install git -y &&  cd ~/dev_ws/ && colcon build && cd ~/dev_ws/src && git clone https://github.com/neil-rti/ros2_mp_latency.git && cd ~/dev_ws/ && colcon build --symlink-install &&  while true; do sleep 30; done;"]
+        imagePullPolicy: IfNotPresent
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ros-talker-deployment
+  labels:
+    app: ros-talker
+  annotations:
+    k8s.v1.cni.cncf.io/networks: dds-network
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ros-talker
+  template:
+    metadata:
+      labels:
+        app: ros-talker
+      annotations:
+        k8s.v1.cni.cncf.io/networks: dds-network
+    spec:
+      containers:
+      - name: talker 
+        image: public.ecr.aws/c8q3f0b5/ros-performance-test:latest
+        command: ["/bin/bash", "-c"]
+        args: ["source /opt/ros/foxy/setup.bash && mkdir -p ~/dev_ws/src && apt install git -y &&  cd ~/dev_ws/ && colcon build && cd ~/dev_ws/src && git clone https://github.com/neil-rti/ros2_mp_latency.git && cd ~/dev_ws/ && colcon build --symlink-install &&  while true; do sleep 30; done; "]
+        imagePullPolicy: IfNotPresent
+---
