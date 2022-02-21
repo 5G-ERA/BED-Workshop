@@ -112,6 +112,8 @@ $ kubectl apply -f talker.yaml
 
 ## Stage 3 - Performance image functionality
 
+### Digital Twin with k8, Webots & ROS2 Web simulation:
+
 
 ## Stage 4 - OSM deployment
 
