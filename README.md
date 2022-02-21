@@ -130,6 +130,12 @@ git clone https://github.com/5G-ERA/BED-Workshop.git
 ```
 The file for the digital twin yaml is named: talker_listener_bk_running.yaml
 
+3) Launch the experiment:
+
+```
+sudo microk8s.kubectl apply -f talker_listener_bk_running.yaml
+```
+
 
 ## Stage 4 - OSM deployment
 
