@@ -230,7 +230,7 @@ The test to run will use DDS fastRTPS, output the results to a csv file and send
 /opt/performance_test/lib/performance_test/perf_test -c  FastRTPS --msg Array1k --output csv
 ```
 
-Stop with control+c when you want to stop the test, there is no limit time.
+Stop with control+c when you want to stop the test, there is no limit time. An example of the output is available in this repo with the name: Performance_APEXIA_EXAMPLE_OUTPUT.csv
 
 ## Stage 4 - OSM deployment
 
