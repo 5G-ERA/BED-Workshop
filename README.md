@@ -30,7 +30,7 @@ This stage describes the process of building the performance_test image for 5G-E
 
 There are 2 ways of building the image. The first one is to execute the command that will automate the steps required.
 
-1) Clonse repository
+1) Clone repository
 ```shell
 git clone https://github.com/5G-ERA/BED-Workshop.git
 ```
