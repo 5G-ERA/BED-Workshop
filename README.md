@@ -30,6 +30,18 @@ This stage describes the process of building the performance_test image for 5G-E
 
 There are 2 ways of building the image. The first one is to execute the command that will automate the steps required.
 
+1) Clonse repository
+```shell
+git clone https://github.com/5G-ERA/BED-Workshop.git
+```
+
+2) Give permission to the /performance_image/build.sh
+
+```shell
+chmod 777 /performance_image/build.sh
+```
+3) Run the bash script
+
 ```shell
 $ ./performance_image/build.sh
 ```
