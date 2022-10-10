@@ -171,6 +171,7 @@ source ~/dev_ws/install/setup.bash
 ```
 Launch the up with virtual screen.
 download xvfb first by this command: 
+instructions can be found here: https://linuxhint.com/install-xvfb-ubuntu/
 ```
 sudo apt install xvfb
 xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
