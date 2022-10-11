@@ -153,7 +153,7 @@ sudo microk8s.kubectl apply -f talker_listener_bk_running.yaml
 sudo microk8s.kubectl get all
 ```
 
-5) Exec into the pod and launch the turtlebot 3 experiment.
+5) Exec into the pod and launch the turtlebot 3 experiment. The containerID can be either ros-listener-deplyment-id/ ros-talker-deployment-id
 
 ```
 sudo microk8s.kubectl exec --stdin --tty containerID -- /bin/bash
