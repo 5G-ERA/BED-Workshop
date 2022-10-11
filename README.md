@@ -156,7 +156,7 @@ sudo microk8s.kubectl get all
 5) Exec into the pod and launch the turtlebot 3 experiment.
 
 ```
-sudo microk8s.kubectl exec --stdin --tty containerID --/bin/bash
+sudo microk8s.kubectl exec --stdin --tty containerID -- /bin/bash
 ```
 
 Inside the container, source ROS2 opt default installation and source the ROS2 workspace created via the yaml file.
