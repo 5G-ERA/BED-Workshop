@@ -177,6 +177,8 @@ apt-get update --fix-missing
 sudo apt-get install firefox 
 ```
 sudo apt install xvfb
+sudo apt-get install ros-foxy-webots-ros2
+ros2 launch webots_ros2_universal_robot multirobot_launch.py 
 xvfb-run ros2 launch webots_ros2_turtlebot robot_launch.py
 ```
 
