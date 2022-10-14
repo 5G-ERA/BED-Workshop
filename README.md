@@ -173,7 +173,7 @@ Launch the up with virtual screen.
 download xvfb first by this command: 
 instructions can be found here: https://linuxhint.com/install-xvfb-ubuntu/
 Some more commands can be needed for proper installation 
-apt-get update --fix-missing
+apt-get update --fix-missing (to fix any issues missing or broken)
 sudo apt-get install firefox 
 ```
 sudo apt install xvfb
