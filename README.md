@@ -101,7 +101,7 @@ The `annotations` part defines that the deployment needs to specify the name of 
 $ kubectl apply -f listener.yaml
 ```
 
-With the listener deployed the logs can be followed by the using the following command:
+With the listener deployed the logs can be followed by the using the following command: (L in lower case used here)
 
 ```shell
 $ kubectl logs --follow -l app=ros-listener
